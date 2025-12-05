@@ -1,0 +1,93 @@
+---
+title: API Overview
+description: Comprehensive guide to Akhshit Documentation API
+---
+
+## API Introduction
+
+The Akhshit Documentation API allows you to programmatically manage your documentation projects, including creating, updating, and retrieving documents.
+
+<Columns cols={2}>
+  <Card title="Authentication" icon="key" href="#authentication" />
+  <Card title="Endpoints" icon="terminal" href="#endpoints" />
+</Columns>
+
+## Authentication
+
+All API requests require authentication using API keys.
+
+<CodeGroup tabs="JavaScript,Python">
+  ````javascript
+const response = await fetch('/api/documents', {
+  headers: {
+    'Authorization': `Bearer ${API_KEY}`,
+    'Content-Type': 'application/json'
+  }
+});
+  ````
+  ````python
+import requests
+
+response = requests.get('/api/documents', 
+  headers={'Authorization': f'Bearer {API_KEY}'})
+  ````
+</CodeGroup>
+
+<Callout kind="alert">
+  Keep your API key secure and never expose it in client-side code.
+</Callout>
+
+## Core Endpoints
+
+<Tabs>
+  <Tab title="Documents" icon="file-text">
+    Manage documentation files.
+    
+    <ParamField query="page" param-type="integer" required="false">
+      Page number for pagination.
+    </ParamField>
+    
+    <ResponseField name="documents" field-type="array" required="true">
+      List of document objects.
+    </ResponseField>
+  </Tab>
+  <Tab title="Projects" icon="folder">
+    Handle documentation projects.
+    
+    <ParamField path="projectId" param-type="string" required="true">
+      Unique project identifier.
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## Error Handling
+
+<Expandable title="Common Error Codes" default-open="false">
+  | Code | Description |
+  |------|-------------|
+  | 400 | Bad request - invalid parameters |
+  | 401 | Unauthorized - invalid API key |
+  | 404 | Not found - resource doesn't exist |
+  | 500 | Internal server error |
+</Expandable>
+
+<Steps>
+  <Step title="Check API Key" icon="key">
+    Verify your API key is correct and has proper permissions.
+  </Step>
+  <Step title="Review Request" icon="search">
+    Ensure all required parameters are included and properly formatted.
+  </Step>
+  <Step title="Contact Support" icon="message-square">
+    Reach out to support if issues persist.
+  </Step>
+</Steps>
+
+<ExpandableGroup>
+  <Expandable title="Rate Limits" default-open="false">
+    API requests are limited to 1000 per hour per API key.
+  </Expandable>
+  <Expandable title="Data Formats" default-open="false">
+    All requests use JSON format for data exchange.
+  </Expandable>
+</ExpandableGroup>

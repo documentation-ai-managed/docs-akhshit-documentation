@@ -1,0 +1,90 @@
+---
+title: Getting Started
+description: Step-by-step guide to set up Akhshit Documentation
+---
+
+## Overview
+
+This guide walks you through the initial setup of Akhshit Documentation, from account creation to your first documentation project.
+
+<Steps>
+  <Step title="Create Account" icon="user">
+    Sign up for an account on the Akhshit Documentation platform.
+    
+    <CodeGroup tabs="Web,API">
+      ````javascript
+      // Visit the signup page
+      window.location.href = 'https://akhshit-docs.com/signup';
+      ````
+      ````bash
+      curl -X POST https://api.akhshit-docs.com/signup \
+        -H "Content-Type: application/json" \
+        -d '{"email":"user@example.com","password":"securepass"}'
+      ````
+    </CodeGroup>
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your email for verification instructions and confirm your account.
+  </Step>
+  <Step title="Create Project" icon="plus">
+    Set up your first documentation project.
+    
+    ```javascript
+    const project = {
+      name: 'My Documentation Project',
+      description: 'Project documentation'
+    };
+    ```
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Make sure to use a strong password and enable two-factor authentication for security.
+</Callout>
+
+## Platform Features
+
+<Tabs>
+  <Tab title="Web Interface" icon="monitor">
+    Use the intuitive web interface to manage your documentation.
+    
+    <Expandable title="Supported Browsers" default-open="false">
+      Akhshit Documentation supports modern browsers including Chrome, Firefox, Safari, and Edge.
+    </Expandable>
+  </Tab>
+  <Tab title="API Integration" icon="terminal">
+    Integrate Akhshit Documentation with your existing tools using our API.
+    
+    <ParamField path="projectId" param-type="string" required="true">
+      The unique identifier for your project.
+    </ParamField>
+    
+    <ResponseField name="id" field-type="string" required="true">
+      The project identifier returned.
+    </ResponseField>
+  </Tab>
+</Tabs>
+
+<ExpandableGroup>
+  <Expandable title="Troubleshooting Setup Issues" default-open="false">
+    Common issues during setup include email verification problems and browser compatibility.
+    
+    | Issue | Solution |
+    |-------|----------|
+    | Email not received | Check spam folder, verify email address |
+    | Browser errors | Use latest browser version |
+  </Expandable>
+  <Expandable title="Account Security" default-open="false">
+    Learn about security best practices for your Akhshit Documentation account.
+  </Expandable>
+</ExpandableGroup>
+
+<Update label="2024-10-15" description="v1.0.0" tags={["feature"]}>
+
+## Initial Release
+
+- Account creation and verification
+- Project setup functionality
+- Basic web interface
+
+</Update>

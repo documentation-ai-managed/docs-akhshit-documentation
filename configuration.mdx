@@ -1,0 +1,82 @@
+---
+title: Configuration
+description: Configure Akhshit Documentation settings and preferences
+---
+
+## Configuration Options
+
+Customize Akhshit Documentation to fit your team's workflow and preferences.
+
+<Tabs>
+  <Tab title="Project Settings" icon="settings">
+    Configure project-level options.
+    
+    <ParamField body="name" param-type="string" required="true">
+      Project name.
+    </ParamField>
+    
+    <ParamField body="visibility" param-type="string" required="false">
+      Set to public or private.
+    </ParamField>
+  </Tab>
+  <Tab title="User Preferences" icon="user">
+    Personal user settings.
+    
+    <ParamField body="theme" param-type="string" required="false">
+      Choose light or dark theme.
+    </ParamField>
+  </Tab>
+</Tabs>
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Navigate to the settings page in your dashboard.
+  </Step>
+  <Step title="Update Preferences" icon="edit">
+    Modify your configuration options.
+  </Step>
+  <Step title="Save Changes" icon="save">
+    Save your settings to apply changes.
+  </Step>
+</Steps>
+
+<Callout kind="info">
+  Changes to project settings may affect all team members.
+</Callout>
+
+## Advanced Configuration
+
+<Expandable title="Webhook Integration" default-open="false">
+  Set up webhooks to receive notifications about documentation changes.
+  
+  ```json
+  {
+    "url": "https://example.com/webhook",
+    "events": ["document.created", "document.updated"]
+  }
+  ```
+</Expandable>
+
+<ExpandableGroup>
+  <Expandable title="Custom Domains" default-open="false">
+    Configure custom domains for your documentation sites.
+  </Expandable>
+  <Expandable title="Access Control" default-open="false">
+    Set up role-based access control for your projects.
+  </Expandable>
+</ExpandableGroup>
+
+<Columns cols={2}>
+  <Card title="Theme Options" icon="sun" href="#" />
+  <Card title="Notification Settings" icon="bell" href="#" />
+</Columns>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "improvement"]}>
+
+## Configuration Updates
+
+- Added custom domain support
+- Improved theme options
+- Enhanced access control settings
+
+</Update>
